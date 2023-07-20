@@ -1,13 +1,11 @@
-export function Tweet ({name, content, like}) {
-    const onLike = () => {
-        console.log("LIKE" , name)
-    }
+export function Tweet ({id, name, content, like, onDelete, onLike }) {
+  
   return (
     <div className="tweet">
-        <button className="delete">❌</button>
+        <button onClick={ () => onDelete(id) } className="delete">❌</button>
         <h3>{name}</h3>
         <p>{content} </p>
-        <button onClick={ () => onLike()}> {like} ❤️ </button>
+        <button onClick={ () => onLike(id)}> {like} ❤️ </button>
     </div>
   )
 }
